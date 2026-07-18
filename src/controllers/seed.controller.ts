@@ -63,6 +63,24 @@ export class SeedController {
         managerAvatar:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Ars%C3%A8ne_Wenger_in_2016.jpg/300px-Ars%C3%A8ne_Wenger_in_2016.jpg',
       },
+      {
+        id: 't7',
+        name: 'Bayern Munich',
+        manager: 'Hansi Flick',
+        averageRating: 0,
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/360px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png',
+        managerAvatar:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Hansi_Flick_2020_%28cropped%29.jpg/300px-Hansi_Flick_2020_%28cropped%29.jpg',
+      },
+      {
+        id: 't8',
+        name: 'Chelsea',
+        manager: 'José Mourinho',
+        averageRating: 0,
+        logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/360px-Chelsea_FC.svg.png',
+        managerAvatar:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Jos%C3%A9_Mourinho_in_2018.jpg/300px-Jos%C3%A9_Mourinho_in_2018.jpg',
+      },
     ];
 
     const seeded = await teamRepository.insertMany(initialTeams);
@@ -132,6 +150,24 @@ export class SeedController {
         logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/360px-Arsenal_FC.svg.png',
         managerAvatar:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Ars%C3%A8ne_Wenger_in_2016.jpg/300px-Ars%C3%A8ne_Wenger_in_2016.jpg',
+      },
+      {
+        id: 't7',
+        name: 'Bayern Munich',
+        manager: 'Hansi Flick',
+        averageRating: 0,
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/360px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png',
+        managerAvatar:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Hansi_Flick_2020_%28cropped%29.jpg/300px-Hansi_Flick_2020_%28cropped%29.jpg',
+      },
+      {
+        id: 't8',
+        name: 'Chelsea',
+        manager: 'José Mourinho',
+        averageRating: 0,
+        logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/360px-Chelsea_FC.svg.png',
+        managerAvatar:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Jos%C3%A9_Mourinho_in_2018.jpg/300px-Jos%C3%A9_Mourinho_in_2018.jpg',
       },
     ];
     await teamRepository.insertMany(initialTeams);
