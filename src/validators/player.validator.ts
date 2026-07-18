@@ -7,7 +7,7 @@ export const createPlayerSchema = z.object({
   rating: z.number().min(1).max(5),
   teamId: z.string().nullable().optional(),
   avatar: z.string().nullable().optional(),
-  phone: z.string().nullable().optional(),
+  phone: z.string().nullable(),
 });
 
 export const updatePlayerSchema = createPlayerSchema.partial();
