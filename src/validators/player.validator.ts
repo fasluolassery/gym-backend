@@ -7,7 +7,21 @@ export const createPlayerSchema = z.object({
   rating: z.number().min(1).max(5),
   teamId: z.string().nullable().optional(),
   avatar: z.string().nullable().optional(),
-  phone: z.string().nullable(),
+  phone: z
+    .string()
+    .min(1, 'Phone number is required')
+    .refine(
+      (val) => {
+        const digits = val.replace(/\D/g, '');
+        return digits.length >= 10 && digits.length <= 13;
+      },
+      {
+        message: 'Phone number must contain between 10 and 13 digits',
+      }
+    )
+    .refine((val) => /^[\d\s+\-()]*$/.test(val), {
+      message: 'Phone number contains invalid characters (digits, +, -, (), spaces only)',
+    }),
 });
 
 export const updatePlayerSchema = createPlayerSchema.partial();

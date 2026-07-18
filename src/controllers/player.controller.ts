@@ -82,15 +82,21 @@ export class PlayerController {
 
     const saved = [];
     for (const p of req.body) {
-      const avatarUrl = await uploadToCloudinary(p.avatar, 'avatars');
+      const validationResult = createPlayerSchema.safeParse(p);
+      if (!validationResult.success) {
+        throw new BadRequestError(
+          `Validation failed for player "${p.name || 'Unknown'}": ${validationResult.error.issues[0]?.message}`
+        );
+      }
+      const avatarUrl = await uploadToCloudinary(validationResult.data.avatar, 'avatars');
       const player = await playerRepository.create({
-        id: p.id,
-        name: p.name,
-        position: p.position,
-        rating: p.rating,
-        teamId: p.teamId ?? null,
+        id: validationResult.data.id,
+        name: validationResult.data.name,
+        position: validationResult.data.position,
+        rating: validationResult.data.rating,
+        teamId: validationResult.data.teamId ?? null,
         avatar: avatarUrl,
-        phone: p.phone ?? null,
+        phone: validationResult.data.phone ?? null,
       } as unknown as Partial<IPlayer>);
       saved.push(mapPlayerToDTO(player));
     }
