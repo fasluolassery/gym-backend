@@ -20,8 +20,9 @@
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
 
   "include": ["src/**/*"],

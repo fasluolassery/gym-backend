@@ -1,6 +1,6 @@
 export const APP_LIMITS = {
-  BODY_PARSER_JSON_LIMIT: '10kb',
-  BODY_PARSER_URLENCODED_LIMIT: '10kb',
+  BODY_PARSER_JSON_LIMIT: '10mb',
+  BODY_PARSER_URLENCODED_LIMIT: '10mb',
 } as const;
 
 export const APP_ROUTES = {

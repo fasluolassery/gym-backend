@@ -25,12 +25,13 @@ const parseEnv = () => {
       maxRetries: data.DB_MAX_RETRIES,
       retryDelayMs: data.DB_RETRY_DELAY_MS,
     },
-    jwt: {
-      secret: data.JWT_SECRET,
-      expiresIn: data.JWT_EXPIRES_IN,
-    },
     cors: {
       origins: data.CORS_ORIGIN.split(',').map((o) => o.trim()),
+    },
+    cloudinary: {
+      cloudName: data.CLOUDINARY_CLOUD_NAME,
+      apiKey: data.CLOUDINARY_API_KEY,
+      apiSecret: data.CLOUDINARY_API_SECRET,
     },
   };
 };

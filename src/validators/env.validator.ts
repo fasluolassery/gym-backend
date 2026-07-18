@@ -7,14 +7,13 @@ export const envSchema = z.object({
   MONGO_URI: z.string({
     message: VALIDATION_MESSAGES.MONGO_URI_REQUIRED,
   }),
-  JWT_SECRET: z.string({
-    message: VALIDATION_MESSAGES.JWT_SECRET_REQUIRED,
-  }),
-  JWT_EXPIRES_IN: z.string().default('1d'),
   CORS_ORIGIN: z.string().default('*'),
   DB_MAX_RETRIES: z.coerce.number().default(5),
   DB_RETRY_DELAY_MS: z.coerce.number().default(2000),
   SHUTDOWN_TIMEOUT_MS: z.coerce.number().default(10000),
+  CLOUDINARY_CLOUD_NAME: z.string().default('db5j3aqfe'),
+  CLOUDINARY_API_KEY: z.string().default('826723526594398'),
+  CLOUDINARY_API_SECRET: z.string().default('ihvXKp5xO0lZr33bDqjlf-47Inw'),
 });
 
 export type EnvSchemaType = z.infer<typeof envSchema>;
